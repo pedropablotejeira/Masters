@@ -2,6 +2,10 @@
 
 Sitio web oficial de MastersComputer, empresa dedicada a la reparación de computadoras, venta de equipos tecnológicos y asesoría informática.
 
+## Nuestra Misión
+
+Brindar soluciones tecnológicas innovadoras y confiables que contribuyan al crecimiento y éxito de nuestros clientes, ofreciendo productos y servicios de calidad, soporte técnico especializado y un servicio personalizado.
+
 ## Servicios
 
 ### Reparación de Computadoras
