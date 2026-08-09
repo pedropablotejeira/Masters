@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Pedro Tejeira">
+    <meta name="description" content="Página principal de Masters Computer - Soluciones tecnológicas, equipos y servicios informáticos.">
+    <meta name="keywords" content="computadoras, tecnologia, reparacion, ventas, asesoria, servicios">
+    <title>Masters Computer - Soluciones Tecnológicas</title>
+    <style>
+        :root {
+            --primary-blue: #0A2540;     /* Azul Marino Principal */
+            --accent-blue: #0066CC;      /* Azul Secundario para interacción */
+            --bright-blue: #0052A3;      /* Azul para hover */
+            --bg-light: #ffffff;
+            --card-bg: #ffffff;
+            --text-dark: #2c3e50;
+            --text-light: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Menú de Navegación */
+        header {
+            background-color: var(--primary-blue);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 1.5rem 0.8rem 0.5rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-container img {
+            max-height: 55px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            color: #ffffff;
+            font-size: 1.8rem;
+            font-weight: bold;
+            font-family: 'Georgia', serif;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 1rem;
+        }
+
+        .nav-item a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .nav-item a:hover, .nav-item a.active {
+            background-color: #ffffff;
+            color: var(--primary-blue);
+        }
+
+        /* Sección Hero */
+        .hero {
+            background: #ffffff;
+            color: var(--primary-blue);
+            padding: 2.5rem 2rem 1rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.8rem;
+            font-weight: bold;
+            font-family: 'Georgia', serif;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #333333;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-blue);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .hero-btn:hover {
+            background-color: var(--bright-blue);
+        }
+
+        /* Contenedor Principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem 2.5rem 2rem;
+        }
+
+        /* Título de Sección */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            margin-top: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+            font-family: 'Georgia', serif;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-blue);
+            margin: 8px auto 0;
+        }
+
+        /* Banner informativo estilo barra */
+        .info-box {
+            background-color: #e6f0fa;
+            color: #004085;
+            border: 1px solid #b8daff;
+            padding: 0.9rem;
+            border-radius: 6px;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+
+        /* Grilla de Servicios */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid #e1e8ed;
+            border-top: 4px solid var(--accent-blue);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            background-color: var(--primary-blue);
+            color: #ffffff;
+            padding: 1.2rem 0.5rem;
+            text-align: center;
+        }
+
+        .card-header h3 {
+            font-size: 1.15rem;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-family: 'Georgia', serif;
+        }
+
+        .card-img-wrapper {
+            width: 100%;
+            background-color: #ffffff;
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-img {
+            width: 100%;
+            height: auto;
+            max-height: 250px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-text {
+            color: #333;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+            font-size: 0.95rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            background-color: var(--accent-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.2s ease;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background-color: var(--bright-blue);
+        }
+
+        /* Contacto */
+        .contact-section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 2.5rem;
+            border: 1px solid #e1e8ed;
+            border-top: 4px solid var(--accent-blue);
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.8rem;
+            color: #333333;
+            font-size: 1.05rem;
+        }
+
+        .contact-info a {
+            color: var(--accent-blue);
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-blue);
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 992px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .card-header h3 {
+                white-space: normal;
+                font-size: 1.3rem;
+            }
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 0.8rem 1rem;
+            }
+            .nav-menu {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MENÚ -->
+    <header>
+        <nav class="navbar">
+            <a href="#inicio" class="logo-container">
+                <img src="MastersComputers.png" alt="Logo Master Computers">
+                <span class="logo-text">Masters Computer</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#inicio" class="active">INICIO</a></li>
+                <li class="nav-item"><a href="#productos">PRODUCTOS</a></li>
+                <li class="nav-item"><a href="#servicios">SERVICIOS</a></li>
+                <li class="nav-item"><a href="#contacto">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- INICIO -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Bienvenidos a Masters Computer</h1>
+            <p>Soluciones tecnológicas integrales, equipos de cómputo de alta calidad y soporte técnico especializado.</p>
+            <a href="#contacto" class="hero-btn">Contáctanos Hoy</a>
+        </div>
+    </section>
+
+    <div class="container">
+        
+        <div class="info-box">
+            Este es nuestro sitio web principal con información y soluciones tecnológicas de Masters Computer.
+        </div>
+
+        <!-- TARJETAS DE SERVICIOS Y PRODUCTOS -->
+        <section id="servicios">
+            <div class="services-grid">
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Reparación de Computadoras</h3>
+                    </div>
+                    <div class="card-img-wrapper">
+                        <img src="Designer.png" alt="Servicio Reparación" class="card-img">
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Mantenimiento preventivo, diagnóstico y reparación técnica especializada para tus equipos.</p>
+                        <a href="#contacto" class="btn">Solicitar Servicio</a>
+                    </div>
+                </div>
+
+                <div class="card" id="productos">
+                    <div class="card-header">
+                        <h3>Ventas de Computadoras</h3>
+                    </div>
+                    <div class="card-img-wrapper">
+                        <img src="Designer1.png" alt="Servicio Ventas" class="card-img">
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Venta de computadoras, repuestos, periféricos y accesorios con garantía y calidad.</p>
+                        <a href="#contacto" class="btn">Ver Catálogo</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Asesoría Tecnológica</h3>
+                    </div>
+                    <div class="card-img-wrapper">
+                        <img src="Designer2.png" alt="Servicio Asesoría" class="card-img">
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Asesoramiento profesional para la adquisición de equipos, redes e infraestructura informática.</p>
+                        <a href="#contacto" class="btn">Consultar Asesor</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="contact-section">
+            <h2 class="section-title">Contáctenos</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Sobre Nosotros</h3>
+                    <p>En <strong>Masters Computer</strong> nos enfocamos en brindar soporte técnico y equipamiento de cómputo adaptado a sus necesidades.</p>
+                </div>
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <p><strong>E-mail:</strong> <a href="mailto:pedro.tejeira8980@itse.ac.pa">masterscomputerpty@gmail.com</a></p>
+                    <p><strong>Ubicación:</strong> Panamá</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; Masters Computer - Diseñado por Pedro Tejeira.</p>
+    </footer>
+
+</body>
+</html>
